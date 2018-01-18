@@ -1,0 +1,96 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+settings = {
+	
+	orientation = {
+		default = "portrait",
+		supported = { "portrait", "portraitUpsideDown", }
+	},
+	
+	iphone = {
+		plist = {
+			UIStatusBarHidden = false,
+			UIPrerenderedIcon = true, -- set to false for "shine" overlay
+			--UIApplicationExitsOnSuspend = true, -- uncomment to quit app on suspend
+
+            --[[
+            -- iOS app URL schemes:
+            CFBundleURLTypes =
+            {
+                {
+                    CFBundleURLSchemes =
+                    {
+                        "fbXXXXXXXXXXXXXX", -- example scheme for facebook
+                        "coronasdkapp", -- example second scheme
+                    }
+                }
+            }
+            --]]
+		}
+	},
+	
+	
+	-- Android permissions
+
+	androidPermissions = {
+  		"android.permission.INTERNET",
+
+  		"android.permission.WRITE_EXTERNAL_STORAGE",
+
+
+  	},
+
+android =  {
+	
+	googlePlayGamesAppId = "829807464971"  --long App ID number (use yours!)
+
+},
+
+plugins =  {
+
+
+["plugin.google.play.services"] =
+{
+    publisherId = "com.coronalabs"
+},
+
+["CoronaProvider.gameNetwork.google"] = {
+
+publisherId = "com.coronalabs",
+
+
+},
+
+
+["plugin.GameThrivePushNotifications"] = {
+
+
+publisherId = "com.gamethrive",
+
+
+},
+
+["CoronaProvider.ads.vungle"] = {
+
+      publisherId = "com.vungle",
+
+   },
+
+["plugin.tapfortap"] = {
+	
+  publisherId = "com.tapfortap",
+
+},
+
+
+["plugin.carrot"] = {
+
+publisherId = "com.gocarrot",	
+
+},
+
+},
+   
+ }
+
